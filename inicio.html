@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HUINA</title>
+     <link rel="icon" type="ICONOVENTANA/jpg" href="images/IconoVENTANA.png">
+    <link rel="stylesheet" href="style_inicio.css">
+</head>
+
+<body>
+    <header>
+        <div class="menu container">
+            <a href="inicio.html"> <img src="images/logooo-Photoroom.png" class="logo" alt=""></a>
+            <input type="checkbox" id="menu">
+            <label for="menu"><img src="images/Menudez.png" class="menu-icono" alt=""></label>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="ventas.html"> Registrar Ventas</a></li>
+                    <li><a href="inventario.html">Lista de productos</a></li>
+                    <li><a href="index.html">Proveedores</a></li>
+                    <li><a href="#" onclick="registro()">Agregar Usuario</a></li>
+                    <li><a href="Login.html">Cerrar Sesion</a></li>
+                </ul>
+
+            </nav>
+        </div>
+        <script>
+            function registro(){
+            let usuario, contraseña;
+            alert("Administrador");
+    
+            usuario = prompt("Usuario administrador:");
+            contraseña = prompt("Contraseña:");
+    
+            
+            if (usuario && contraseña) {
+                if (usuario === "administrador" && contraseña === "admin123") {
+                    alert("¡Bienvenido, administrador!");
+                    window.location.href = 'registro.html';
+                } else {
+                    alert("Acceso denegado");
+                }
+            } else {
+                alert("Debes completar ambos campos.");
+            }}
+        </script>
+        <div class="header-content container">
+            <div class="header-txt">
+                <h1>INVENTARIO🎣</h1>
+                <h1>PESCADERIA HUINA</h1>
+  
+                <p>
+                   AYUDAMOS A MANEJAR MEJOR SUS PRODUCTOS </p>
+
+                    <p> Manejamos todo tipo de pescados, mariscos, y pollo
+                </p>
+               
+
+            </div>
+            <div class="header-img">
+                <img src="images/img-1.png" class="Pescado" alt="">
+            </div>
+        </div>
+    </header>
+    
+  <section class="info">
+
+        <div class="info-content container">
+
+            <div class="info-txt">
+                <p>Conoce un poco sobre nosotros </p>
+                <h2>¿Que haremos?</h2>
+
+                <div class="info-sec">
+
+
+                    <div class="info-1">
+                        <img src="images/logo-info1.png" alt="">
+                        <div class="info-2">
+                            <h3>  UN MEJOR MANEJO DE SU INVENTARIO </h3>
+                            <p>
+                                Gestionamos todos los productos que ingresen al inventario y los que salgan 
+                            </p>
+
+                        </div>
+
+                    
+
+                </div>
+
+            </div>
+            <div class="info-img">
+                <img src="images/info1.png" class="latillo" alt="">
+
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="footer container">
+
+        <img class="logo-2" src="images/logooo-Photoroom.png" alt="">
+
+        <div class="links">
+            <h4>Santiago</h4>
+            
+            <ul>
+                <li> <a href="#">Lorem</a></li>
+                <li> <a href="#">Lorem</a></li>
+                <li> <a href="#">Lorem</a></li>
+                <li> <a href="#">Lorem</a></li>
+            </ul>
+
+        </div>
+        <div class="links">
+            <h4>Sneider</h4>
+            
+            <ul>
+                <li> <a href="#">Lorem</a></li>
+                <li> <a href="#">Lorem</a></li>
+                <li> <a href="#">Lorem</a></li>
+                <li> <a href="#">Lorem</a></li>
+            </ul>
+
+        </div>
+        <div class="links">
+            <h4>Marlon</h4>
+           
+            <ul>
+                <li> <a href="#">Lorem</a></li>
+                <li> <a href="#">Lorem</a></li>
+                <li> <a href="#">Lorem</a></li>
+                <li> <a href="#">Lorem</a></li>
+            </ul>
+
+        </div>
+
+        <div class="links">
+            <h4>Kamila</h4> 
+             
+            <ul>
+                <li> <a href="#">Lorem</a></li>
+                <li> <a href="#">Lorem</a></li>
+                <li> <a href="#">Lorem</a></li>
+                <li> <a href="#">Lorem</a></li>
+            </ul>
+
+        </div>
+
+        <div class="links">
+            <h4>Carlos</h4>
+           
+            <ul>
+                <li> <a href="#">Lorem</a></li>
+                <li> <a href="#">Lorem</a></li>
+                <li> <a href="#">Lorem</a></li>
+                <li> <a href="#">Lorem</a></li>
+            </ul>
+
+        </div>
+
+        <div class="links">
+            <h4>REDES SOCIALES</h4>
+            <div class="socials">
+                <a href="http://www.fb.com/profile.php">
+                    <div class="social">
+                        <img src="images/s1.png" alt="">
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="social">
+                        <img src="images/s2.png" alt="">
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="social">
+                        <img src="images/s3.png" alt="">
+                    </div>
+                </a>
+
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

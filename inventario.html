@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="ICONOVENTANA/jpg" href="images/IconoVENTANA.png">
+     <a href="inicio.html"> <img src="images/regresar.png" class="logo" alt=""></a>
+  
+    <title>Lista de Productos</title>
+   
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-image: url("images/fondo-base.jpg");
+       background-size: cover;
+       background-attachment: fixed;
+       background-position: center;
+    }
+
+    h1 {
+      color: #000000;
+    }
+
+    h2 {
+      color: #060606;
+      margin-top: 30px;
+    }
+
+    .producto {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+    .container {
+    max-width: 960px;
+    margin: 50px auto;
+    padding: 40px;
+     background-color: rgba(255, 255, 255,.6);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.9);
+}
+
+    .disponible {
+      background-color: #d4edda;
+      color: #155724;
+      margin-right: 10px;
+      padding: 5px;
+      border-radius: 50%;
+    }
+
+    .pronto-agotarse {
+      background-color: #fff3cd;
+      color: #856404;
+      margin-right: 10px;
+      padding: 5px;
+      border-radius: 50%;
+    }
+
+    .agotado {
+      background-color: #f8d7da;
+      color: #721c24;
+      margin-right: 10px;
+      padding: 5px;
+      border-radius: 50%;
+    }
+
+    #busqueda {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+<center>
+  <h1>LISTA DE PRODUCTOS</h1>
+</center>
+  <input type="text" id="busqueda" placeholder="Buscar producto..." onkeyup="filtrarProductos()">
+
+  <h2>Pollo</h2>
+
+  <div class="producto">
+    <span class="disponible">✅</span>
+    <span>Bandeja de mixta (30 unidades disponibles)</span>
+  </div>
+
+  <div class="producto">
+    <span class="pronto-agotarse">🔶</span>
+    <span>Alitas (10 unidades pronto a agotarse)</span>
+  </div>
+
+  <div class="producto">
+    <span class="agotado">❌</span>
+    <span>Muslos de pollo (Agotado)</span>
+  </div>
+
+  <h2>Mariscos</h2>
+
+  <div class="producto">
+    <span class="disponible">✅</span>
+    <span>Camarón (35 unidades disponibles)</span>
+  </div>
+
+  <div class="producto">
+    <span class="pronto-agotarse">🔶</span>
+    <span>Mixtura (5 unidades pronto a agotarse)</span>
+  </div>
+
+  <div class="producto">
+    <span class="agotado">❌</span>
+    <span>Calamar (Agotado)</span>
+  </div>
+
+  <h2>Pescados</h2>
+
+  <div class="producto">
+    <span class="disponible">✅</span>
+    <span>Trucha (26 unidades disponibles)</span>
+  </div>
+
+  <div class="producto">
+    <span class="pronto-agotarse">🔶</span>
+    <span>Mojarra (14 unidades pronto a agotarse)</span>
+  </div>
+
+  <div class="producto">
+    <span class="agotado">❌</span>
+    <span>Bocachico (Agotado)</span>
+  </div>
+  </div>
+
+  <script>
+    function filtrarProductos() {
+      const input = document.getElementById('busqueda');
+      const filtro = input.value.toLowerCase();
+      const productos = document.querySelectorAll('.producto');
+
+      productos.forEach(producto => {
+        const texto = producto.textContent.toLowerCase();
+        producto.style.display = texto.includes(filtro) ? 'flex' : 'none';
+      });
+    }
+  </script>
+
+</body>
+</html>

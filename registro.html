@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head> 
+    <meta charset="UTF-8">
+    <title>Registrar Usuarios</title>
+    
+        
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('images/fondo-base.jpg');
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+        .form-container {
+            
+            max-width: 500px;
+            margin: 60px auto;
+            padding: 40px;
+           
+             background-color: rgba(255, 255, 255,.6);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.9);
+        }
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            text-decoration:underline;
+            color: #070932;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #000000;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #000000;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #00394f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 2px 2px 0 #000;
+        }
+        .btn:hover {
+            background-color: #005570;
+        }
+        
+    </style>
+     <a href="inicio.html"> <img src="images/regresar.png" class="logo111" alt="40%"></a>
+</head>
+ 
+<body>
+
+    
+
+    <div class="form-container">
+        <center><img src="images/logooo-Photoroom.png" class="logo_registro" width="50%"></a></center>
+        <h2>Registrar usuarios</h2>
+        <form id="registroForm" onsubmit="return validarFormulario()">
+            <label for="usuario">Nombre de usuario:</label>
+            <input type="text" id="usuario" required>
+
+            <label for="correo">Correo electrónico:</label>
+            <input type="email" id="correo" required>
+
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" pattern="[0-9]{7,10}" required>
+
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" required>
+
+            <label for="confirmPassword">Confirmar Contraseña:</label>
+            <input type="password" id="confirmPassword" required>
+
+            <input type="submit" value="Registrar usuario" class="btn">
+        </form>
+    </div>
+
+    <script>
+        function validarFormulario() {
+            const usuario = document.getElementById("usuario").value;
+            const correo = document.getElementById("correo").value;
+            const telefono = document.getElementById("telefono").value;
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirmPassword").value;
+
+            // Validación de contraseñas
+            if (password !== confirmPassword) {
+                alert("Las contraseñas no coinciden.");
+                return false;
+            }
+
+            // Validación de teléfono
+            if (!/^\d{7,10}$/.test(telefono)) {
+                alert("El teléfono debe contener entre 7 y 10 dígitos numéricos.");
+                return false;
+            }
+
+            alert("Usuario registrado exitosamente.");
+            return true;
+        }
+    </script>
+
+</body>
+</html>

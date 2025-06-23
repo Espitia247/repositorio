@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gestión de Pedidos</title>
+    <link rel="stylesheet" href="estiloventa.css" />
+   
+</head>
+<body>
+    <div class="container">
+        <h2>Registro de venta</h2>
+        <form id="formPedido">
+            <div class="form-group">
+                <label for="selectProveedor">Producto</label>
+                <input type="text" id="selectProveedor" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+" title="Solo letras" required />
+            </div>
+            <div class="form-group">
+                <label for="selectProducto">Cantidad</label>
+                   <input type="text" id="selectProveedor" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+" title="Solo letras" required />
+                
+            </div>
+            <div class="form-group">
+                <label for="precioventa">Precio</label>
+                <input type="number" id="precioventa"  min="1" required />
+            </div>
+            <style>
+                button[type="submit"], button[type="cancelar-venta"] {
+                    background-color: #3498db;
+                    color: #fff;
+                    border: none;
+                    padding: 10px 20px;
+                    margin-right: 10px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                }
+                button[type="submit"]:hover, button[type="cancelar venta"]:hover {
+                    background-color: #bb212e;
+                }
+            </style>
+            <button type="submit">Guardar Venta</button>
+                 <button type="cancelar-venta">Cancelar Venta</button>
+        </form>
+
+        <h3>Lista de Ventas</h3>
+        <table id="tablaVentas">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        <html>

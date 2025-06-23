@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Restablecer Contraseña</title>
+     <a href="Login.html"> <img src="images/regresar.png" class="logo" alt=""></a>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+             background-image: url("images/fondo-base.jpg");
+             background-size: cover;
+       background-attachment: fixed;
+       background-position: center;
+            padding: 30px;
+        }
+        .form-container {
+            padding: 25px;
+            max-width: 400px;
+            margin: auto;
+                 background-color: rgba(255, 255, 255,.6);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.9);
+        }
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #0c3e57;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .success-message {
+            color: green;
+            font-weight: bold;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>¿Olvidaste tu contraseña?</h2>
+    <p>Ingresa tu correo electrónico para restablecer tu contraseña.</p>
+    <form id="resetForm">
+        <input type="email" id="email" placeholder="Tu correo electrónico" required>
+        <input type="submit" value="Enviar enlace">
+        <p class="success-message" id="successMsg">Se ha enviado un enlace a tu correo.</p>
+    </form>
+</div>
+
+<script>
+    document.getElementById("resetForm").addEventListener("submit", function(event){
+        event.preventDefault();
+        const email = document.getElementById("email").value;
+
+        // Aquí podrías enviar el correo al backend usando fetch o AJAX
+        console.log("Correo ingresado: " + email);
+
+        // Mostrar mensaje de éxito simulado
+        document.getElementById("successMsg").style.display = "block";
+    });
+</script>
+
+</body>
+</html>

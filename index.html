@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gestión de Pedidos</title>
+      <link rel="icon" type="ICONOVENTANA/jpg" href="images/IconoVENTANA.png">
+    <link rel="stylesheet" href="estyles.css" />
+     
+</head>
+<body>
+    
+    <div class="container">
+        <a href="inicio.html"> <img src="images/regresar.png" class="logo" alt=""></a>
+        <h2>REGISTRAR PEDIDO</h2>
+        <form id="formPedido">
+            <div class="form-group">
+                <label for="selectProveedor">Proveedor:</label>
+                <select id="selectProveedor" required>
+                    <option value="" disabled selected>Seleccione proveedor</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="selectProducto">Producto:</label>
+                <select id="selectProducto" required>
+                    <option value="" disabled selected>Seleccione producto</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="cantidadPedido">Cantidad:</label>
+                <input type="number" id="cantidadPedido" min="1" required />
+            </div>
+            <button type="submit">Guardar Pedido</button>
+        </form>
+
+        <h2>LISTA DE PEDIDOS</h2>
+        <table id="tablaPedidos">
+            <thead>
+                <tr>
+                    <th>Proveedor</th>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio Unitario</th>
+                    <th>Total</th>
+                    <th>Fecha</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <a href="registrar.html" class="link">Ir a registro de proveedores</a>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            cargarDesdeLocalStorage();
+            renderTablaPedidos();
+            actualizarSelectProveedores();
+
+            const formPedido = document.getElementById('formPedido');
+            if (formPedido) {
+                formPedido.addEventListener('submit', guardarPedido);
+            }
+        });
+    </script>
+</body>
+</html>

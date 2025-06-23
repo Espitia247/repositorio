@@ -1,0 +1,453 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    background: linear-gradient(120deg, #1a2980 0%, #26d0ce 100%);
+    background-size: 400% 400%;
+    animation: fondoAnimado 16s ease-in-out infinite alternate;
+}
+
+@keyframes fondoAnimado {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+button.cancelar-venta {
+    position: relative;
+    background: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 50px 50px 50px 50px / 30px 30px 40px 40px;
+    padding: 16px 60px 16px 40px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 2px 8px rgba(220,53,69,0.13);
+    transition: background 0.3s, transform 0.2s;
+    overflow: visible;
+}
+button.cancelar-venta::before {
+    /* Cola del pez */
+    content: "";
+    position: absolute;
+    right: -28px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    background: #dc3545;
+    border-radius: 0 60% 60% 0 / 50% 100% 100% 50%;
+    clip-path: polygon(0 50%, 100% 0, 100% 100%);
+    box-shadow: -2px 0 8px rgba(220,53,69,0.10);
+}
+button.cancelar-venta::after {
+    /* Ojo del pez */
+    content: "";
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 2px 2px 0 0 #333;
+}
+button.cancelar-venta:hover {
+    background: #c82333;
+    transform: scale(1.04) rotate(-2deg);
+}
+button.cancelar-venta {
+    background-color: #dc3545;
+    color: #fff;
+}
+button.cancelar-venta:hover {
+    background-color: #c82333;
+}
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+   
+}
+@keyframes fondoAnimado {
+    0% { filter: hue-rotate(0deg) brightness(1); }
+    100% { filter: hue-rotate(20deg) brightness(1.08); }
+}
+
+/* Animación de entrada para el contenedor principal */
+.container {
+    animation: fadeInUp 1s cubic-bezier(.23,1.01,.32,1) both;
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 40px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* Efecto interactivo en inputs */
+input[type="text"],
+input[type="number"],
+input[type="email"],
+select {
+    background: rgba(255,255,255,0.85);
+    box-shadow: 0 1px 4px rgba(44,83,100,0.07);
+}
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+select:focus {
+    background: #f0f7ff;
+    border-color: #0056b3;
+    box-shadow: 0 0 12px 2px rgba(0,123,255,0.13);
+}
+
+/* Botón con efecto de onda */
+button {
+    position: relative;
+    overflow: hidden;
+}
+button::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255,255,255,0.3);
+    border-radius: 100%;
+    transform: translate(-50%, -50%);
+    transition: width 0.4s cubic-bezier(.23,1.01,.32,1), height 0.4s cubic-bezier(.23,1.01,.32,1);
+    pointer-events: none;
+}
+button:active::after {
+    width: 200px;
+    height: 200px;
+    transition: 0s;
+}
+
+/* Sombra y transición elegante en tarjetas y listas */
+.container,
+#listaProveedores li,
+table {
+    transition: box-shadow 0.3s cubic-bezier(.23,1.01,.32,1), transform 0.2s cubic-bezier(.23,1.01,.32,1);
+}
+#listaProveedores li:hover,
+.container:hover {
+    box-shadow: 0 8px 24px rgba(44,83,100,0.13);
+    transform: translateY(-2px) scale(1.01);
+}
+
+/* Títulos con animación de subrayado */
+h2, h3 {
+    overflow: hidden;
+}
+h2::after, h3::after {
+    animation: underlineSlide 1.2s cubic-bezier(.23,1.01,.32,1);
+}
+@keyframes underlineSlide {
+    from { width: 0; }
+    to { width: 50px; }
+}
+
+/* Tabla con efecto hover animado */
+tbody tr {
+    transition: background 0.3s cubic-bezier(.23,1.01,.32,1), box-shadow 0.2s cubic-bezier(.23,1.01,.32,1);
+}
+tbody tr:hover {
+    background: linear-gradient(90deg, #e3f0ff 0%, #f9f9f9 100%);
+    box-shadow: 0 2px 8px rgba(44,83,100,0.07);
+}
+
+/* Links con subrayado animado */
+.link {
+    position: relative;
+    overflow: hidden;
+}
+.link::after {
+    content: "";
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 100%; height: 2px;
+    background: #007bff;
+    transform: scaleX(0);
+    transition: transform 0.3s cubic-bezier(.23,1.01,.32,1);
+    transform-origin: left;
+}
+.link:hover::after {
+    transform: scaleX(1);
+}
+body {
+
+    font-family: 'Roboto', sans-serif; /* Fuente moderna y legible */
+    margin: 0;
+    padding: 0;
+    background-image: url("images/fondo-login.jpg");
+       background-size: cover;
+       background-attachment: fixed;
+       background-position: center;
+    color: #333;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    max-width: 960px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra sutil */
+}
+
+h2, h3 {
+    font-family: 'Playfair Display', serif; /* Fuente elegante para títulos */
+    color: #2e384d; /* Color de título moderno */
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+h2::after, h3::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 3px;
+    width: 50px;
+    background-color: #007bff; /* Color de acento moderno */
+    border-radius: 2px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+select {
+    width: calc(100% - 22px);
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3); /* Sombra de enfoque */
+}
+
+button {
+    background-color: #007bff; /* Botón azul moderno */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(38, 34, 225, 0.1);
+}
+
+.link {
+    display: inline-block;
+    margin-top: 15px;
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.link:hover {
+    color: #2d2e2f;
+    text-decoration: underline;
+}
+
+/* Estilos para la tabla de pedidos */
+table {
+    margin-top: 30px;
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    background-color: white;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid #eee;
+}
+
+th, td {
+    border-bottom: 1px solid #f2f2f2;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f8f8f8;
+    font-weight: 500;
+    color: #444;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #fcfcfc;
+}
+
+tbody tr:hover {
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease;
+}
+
+/* Estilos para la lista de proveedores */
+#listaProveedores {
+    list-style: none;
+    padding: 0;
+    margin-top: 25px;
+}
+
+#listaProveedores li {
+    border: 1px solid #eee;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: white;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#listaProveedores li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+.proveedor-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.proveedor-actions button {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.proveedor-actions button.editar {
+    background-color: #ffc107; /* Amarillo suave */
+    color: #333;
+}
+
+.proveedor-actions button.editar:hover {
+    background-color: #e0a800;
+}
+
+.proveedor-actions button.eliminar {
+    background-color: #dc3545; /* Rojo suave */
+    color: white;
+}
+
+.proveedor-actions button.eliminar:hover {
+    background-color: #c82333;
+}
+
+/* Estilos específicos para la página de registro */
+body#registro-page {
+     background-image: url("images/fondo-login.jpg");
+       background-size: cover;
+       background-attachment: fixed;
+       background-position: center;
+}
+
+.container#registro-container {
+    max-width: 550px;
+}
+
+/* Estilos específicos para los botones de acción de los pedidos */
+#tablaPedidos button.editar,
+#tablaPedidos button.eliminar {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#tablaPedidos button.editar {
+    background-color: #007bff; /* Azul moderno */
+    color: white;
+    margin-right: 5px;
+}
+
+#tablaPedidos button.editar:hover {
+    background-color: #0056b3;
+}
+
+#tablaPedidos button.eliminar {
+    background-color: #dc3545; /* Rojo elegante */
+    color: white;
+}
+
+#tablaPedidos button.eliminar:hover {
+    background-color: #c82333;
+}
+
+/* Productos en registro de proveedor */
+.producto-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.producto-item input {
+    flex: 1;
+    padding: 8px;
+}
+
+.btn-eliminar-producto {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.btn-eliminar-producto:hover {
+    background-color: #c82333;
+}

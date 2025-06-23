@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="icon" type="ICONOVENTANA/jpg" href="images/ICONOVENTANA.png">
+  <meta charset="UTF-8">
+  <title>INGRESO</title>
+  <style>
+    body {
+       background-image: url("images/fondo-base.jpg");
+       background-size: cover;
+       background-attachment: fixed;
+       background-position: center;
+      font-family:Verdana, Geneva, Tahoma, sans-serif, Times, serif, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-box {
+      padding: 30px;
+      background-color: rgba(255, 255, 255,.6);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.9);
+    }
+
+    input {
+      display: block;
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 10px;
+    }
+    .contra {
+        padding: 10px;
+      width: 100%;
+      color: #0c3e57;
+      border-radius: 8px;
+      cursor: point
+    }
+
+    button {
+      padding: 10px;
+      width: 100%;
+      background-color: #0c3e57;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #297c9a;
+    }
+
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-box">
+   <center><img src="images/logo-ori.png" class="logo" width="60%"></a></center>
+    <h2>Iniciar sesión</h2>
+    <input type="text" id="usuario" placeholder="Usuario">
+    <input type="password" id="contraseña" placeholder="Contraseña">
+    <button onclick="verificarLogin()"> <h1>Entrar</h1></button>
+    <p class="error" id="mensaje-error"></p>
+     <a href="restablecer.html" class="contra">Olvidaste tu contraseña?</a>
+  </div>
+
+  <script>
+    function verificarLogin() {
+      const usuario = document.getElementById('usuario').value;
+      const contraseña = document.getElementById('contraseña').value;
+      const mensajeError = document.getElementById('mensaje-error');
+
+      // Validar usuario y contraseña
+      if (usuario === 'administrador' && contraseña === 'admin123') {
+        window.location.href = 'inicio.html';
+      } else if (usuario === 'usuario' && contraseña === 'usuario123') {
+        window.location.href = 'inicio.html';
+      } else {
+        mensajeError.textContent = 'Usuario o contraseña incorrectos';
+      }
+    }
+  </script>
+
+</body>
+</html>

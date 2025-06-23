@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link rel="icon" type="ICONOVENTANA/jpg" href="images/IconoVENTANA.png">
+    <title>Registro de Proveedores</title>
+    <link rel="stylesheet" href="estyles.css" />
+</head>
+<body id="registro-page">
+    <div class="container" id="registro-container">
+        <h2>Registrar Proveedor</h2>
+        <form id="formProveedor">
+            <div class="form-group">
+                <label for="idProveedor">Codigo de la Empresa:</label>
+                <input type="text" id="idProveedor" required />
+            </div>
+            <div class="form-group">
+                <label for="nombreEmpresa">Nombre de la Empresa:</label>
+                <input type="text" id="nombreEmpresa" required />
+            </div>
+            <div class="form-group">
+                <label for="correoProveedor">Correo Electrónico:</label>
+                <input type="email" id="correo" required />
+            </div>
+            <div class="form-group">
+                <label for="telefonoProveedor">Teléfono:</label>
+                <input type="text" id="telefono" required />
+            </div>
+            <div class="form-group">
+                <label for="direccionProveedor">Dirección:</label>
+                <input type="text" id="direccion" required />
+            </div>
+
+            <h3>Productos y precios</h3>
+            <div id="productos-container">
+                <div class="form-group producto-item">
+                    <input type="text" class="producto-nombre" placeholder="Nombre del producto" required />
+                    <input type="number" class="producto-precio" placeholder="Precio unitario" min="0" step="0.01" required />
+                    <button type="button" class="btn-eliminar-producto" title="Eliminar producto">X</button>
+                </div>
+            </div>
+            <button type="button" id="btnAgregarProducto">Agregar producto</button>
+
+            <button type="submit" id="btn-guardar-proveedor">Guardar Proveedor</button>
+        </form>
+
+        <h3>Lista de Proveedores</h3>
+        <ul id="listaProveedores"></ul>
+
+        <a href="index.html" class="link">Ir a gestión de pedidos</a>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('btnAgregarProducto').addEventListener('click', agregarProductoInput);
+            const formProveedor = document.getElementById('formProveedor');
+            if (formProveedor) {
+                formProveedor.addEventListener('submit', guardarProveedor);
+            }
+            cargarDesdeLocalStorage();
+            renderListaProveedores();
+        });
+    </script>
+</body>
+</html>
